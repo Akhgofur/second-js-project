@@ -101,26 +101,37 @@ const data = [
 ];
 const ul = document.querySelector('ul')
 for(let i = 0; i < data.length; i++ ) {
+  
   const li = document.createElement('li');
   li.className = ('user card d-inline-block col-12 col-lg-4 col-md-6 col-xl-3 px-2"')
+  
   const div = document.createElement('div');
   div.className = ('user__content card-body"');
+  
   const img = document.createElement('img');
   img.className = ('user__img card-img');
   img.src = data[i].src;
+  
   const h3 = document.createElement('h3');
   h3.className = ('user__fullname h5 mt-3');
   h3.textContent = [data[i].first_name + data[i].last_name];
+  
   const a = document.createElement('a');
   a.className = ('user__email h6 text-primary d-block');
   a.textContent = data[i].email;
+  a.href = 'mailto' + data[i].email
+  
   const gender = document.createElement('p');
   gender.className = ('user__gender h6');
   gender.textContent = data[i].gender;
+  
   const ip = document.createElement('p');
   ip.className = ('user__address text-bg-info rounded text-white ps-2');
   ip.textContent = data[i].ip_address;
+  
   div.append(img,h3,a,gender,ip);
+  
   li.append(div);
+  
   ul.append(li);
 }
