@@ -99,6 +99,7 @@ const data = [
     ip_address: "177.47.251.168",
   },
 ];
+
 const ul = document.querySelector('ul')
 
 const liWrap = document.createDocumentFragment('div')
@@ -108,6 +109,7 @@ function el(tagName,className) {
   tagName.className = (className)
   return tagName
 }
+
 function content(inf,text) {
   inf.textContent = text
   return inf
